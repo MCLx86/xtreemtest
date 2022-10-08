@@ -1,11 +1,15 @@
-XtreemTest ~~Minetest~~
+~~Minetest~~ XtreemTest
 ========
 
 
+### "It's just not a game anymore!"
+
 Fork of Minetest, a free-as-in-freedom voxel game engine with easy modding and game creation.
 
-Copyright (C) 2010-2022 Perttu Ahola <celeron55@gmail.com>
-Copyright (C) 2021-2022 Migdyn <xtreemsex@testing.cubesoftware.xyz>
+Copyright (C) 2010-2022 Perttu Ahola <celeron55@gmail.com>  
+
+Copyright (C) 2021-2022 Migdyn <xtreemsex@testing.cubesoftware.xyz>  
+
 and contributors (see source file comments and the version control log of the original Minetest repository, which can be found [here](https://github.com/minetest/minetest).
 
 
