@@ -1,14 +1,16 @@
-Minetest
+XtreemTest ~~Minetest~~
 ========
 
-![Build Status](https://github.com/minetest/minetest/workflows/build/badge.svg)
-[![Translation status](https://hosted.weblate.org/widgets/minetest/-/svg-badge.svg)](https://hosted.weblate.org/engage/minetest/?utm_source=widget)
-[![License](https://img.shields.io/badge/license-LGPLv2.1%2B-blue.svg)](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html)
 
-Minetest is a free open-source voxel game engine with easy modding and game creation.
+Fork of Minetest, a free-as-in-freedom voxel game engine with easy modding and game creation.
 
 Copyright (C) 2010-2022 Perttu Ahola <celeron55@gmail.com>
-and contributors (see source file comments and the version control log)
+Copyright (C) 2021-2022 Migdyn <xtreemsex@testing.cubesoftware.xyz>
+and contributors (see source file comments and the version control log of the original Minetest repository, which can be found [here](https://github.com/minetest/minetest).
+
+
+## IMPORTANT NOTE: This readme file and other documentation might be outdated or irrelevant, as it was taken directly from the original Minetest code.
+
 
 In case you downloaded the source code
 --------------------------------------
