@@ -39,7 +39,7 @@ local screenshot_downloaded = {}
 local search_string = ""
 local cur_page = 1
 local num_per_page = 5
-local filter_type = 1
+local filter_type = -1
 local filter_types_titles = {
 	fgettext("All packages"),
 	fgettext("Games"),
@@ -434,6 +434,8 @@ function install_dialog.get_formspec()
 end
 
 function install_dialog.handle_submit(this, fields)
+	store.filter_packages(search_string)
+	
 	if fields.cancel then
 		this:delete()
 		return true
@@ -713,12 +715,13 @@ function store.filter_packages(query)
 		for k = 1, #keywords do
 			local keyword = keywords[k]
 
-			if string.find(package.name:lower(), keyword, 1, true) or
-					string.find(package.title:lower(), keyword, 1, true) or
-					string.find(package.author:lower(), keyword, 1, true) or
-					string.find(package.short_description:lower(), keyword, 1, true) then
+			if string.find(package.author:lower(), keyword, 1, true) then
 				return true
 			end
+			
+			--if string.find(package.name:lower(), keyword, 1, true) or string.find(package.title:lower(), keyword, 1, true) or string.find(package.author:lower(), keyword, 1, true) or string.find(package.short_description:lower(), keyword, 1, true) then
+			--	return true
+			--end
 		end
 
 		return false
@@ -735,6 +738,8 @@ end
 
 function store.get_formspec(dlgdata)
 	store.update_paths()
+
+	
 
 	dlgdata.pagemax = math.max(math.ceil(#store.packages / num_per_page), 1)
 	if cur_page > dlgdata.pagemax then
@@ -899,10 +904,15 @@ function store.get_formspec(dlgdata)
 		formspec[#formspec + 1] = "container_end[]"
 	end
 
+	
+
 	return table.concat(formspec, "")
 end
 
 function store.handle_submit(this, fields)
+
+	
+
 	if fields.search or fields.key_enter_field == "search_string" then
 		search_string = fields.search_string:trim()
 		cur_page = 1
@@ -913,7 +923,7 @@ function store.handle_submit(this, fields)
 	if fields.clear then
 		search_string = ""
 		cur_page = 1
-		store.filter_packages("")
+		store.filter_packages(search_string)
 		return true
 	end
 

@@ -15,13 +15,13 @@
 --with this program; if not, write to the Free Software Foundation, Inc.,
 --51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-mt_color_grey  = "#AAAAAA"
+mt_color_grey  = "#AAAAFF"
 mt_color_blue  = "#6389FF"
 mt_color_lightblue  = "#99CCFF"
-mt_color_green = "#72FF63"
-mt_color_dark_green = "#25C191"
-mt_color_orange  = "#FF8800"
-mt_color_red = "#FF3300"
+mt_color_green = "#7264F3"
+mt_color_dark_green = "#25C1F1"
+mt_color_orange  = "#FF6600"
+mt_color_red = "#FF0000"
 
 local menupath = core.get_mainmenu_path()
 local basepath = core.get_builtin_path()
@@ -95,7 +95,7 @@ local function init_globals()
 	mm_game_theme.init()
 
 	-- Create main tabview
-	local tv_main = tabview_create("maintab", {x = 12, y = 5.4}, {x = 0, y = 0})
+	--[[local tv_main = tabview_create("maintab", {x = 12, y = 5.4}, {x = 0, y = 0})
 	-- note: size would be 15.5,7.1 in real coordinates mode
 
 	tv_main:set_autosave_tab(true)
@@ -123,11 +123,11 @@ local function init_globals()
 		if game == nil then
 			mm_game_theme.reset()
 		end
-	end
+	end]]
 
-	ui.set_default("maintab")
+	--ui.set_default("maintab")
 	check_new_version()
-	tv_main:show()
+	--tv_main:show()
 	ui.update()
 end
 

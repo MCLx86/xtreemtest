@@ -20,7 +20,6 @@
 local xtreemtest_developers = {
 "Migdyn (a.k.a. Mike) <xtreemsex@testing.cubesoftware.xyz> [XtreemTest founder]",
 "Looki2000",
-"Kacper Kostka <kacperks@cubesoftware.xyz>",
 }
 
 local core_developers = {
@@ -165,7 +164,7 @@ return {
 			"style[label_button;border=false]" ..
 			"button[0.1,3.4;5.3,0.5;label_button;" ..
 			core.formspec_escape(version.project .. " " .. version.string) .. "]" ..
-			"button[1.5,4.1;2.5,0.8;homepage;mcl.sovnat.info]" ..
+			"button[0.5,4.1;4.5,0.8;homepage;mcl.sovnat.info]" ..
 			"scroll_container[5.5,0.1;9.5,6.9;scroll_credits;vertical;" ..
 			tostring(scroll_height / 1000) .. "]" .. credit_fs ..
 			"scroll_container_end[]"..
