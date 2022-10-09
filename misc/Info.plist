@@ -5,15 +5,15 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>minetest</string>
+	<string>xtreemtest</string>
 	<key>CFBundleIconFile</key>
-	<string>minetest-icon.icns</string>
+	<string>xtreemtest-icon.icns</string>
 	<key>CFBundleName</key>
-	<string>Minetest</string>
+	<string>XtreemTest</string>
 	<key>CFBundleDisplayName</key>
-	<string>Minetest</string>
+	<string>XtreemTest</string>
 	<key>CFBundleIdentifier</key>
-	<string>net.minetest.minetest</string>
+	<string>info.sovnat.xtreemtest</string>
 	<key>NSHighResolutionCapable</key>
 	<false/>
 </dict>
