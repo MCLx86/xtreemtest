@@ -31,7 +31,7 @@ return {
 			"style[label_button;border=false]" ..
 			"button[0.1,4;8.3,1.5;online_play;Play on-line (real people, not bots)]" ..
 			"button[0.1,6;8.3,1.5;local_play;Play locally]" ..
-			"button[0.1,8;8.3,1.5;xtreemcoins;Get XtreemCoins]"
+			"button[0.1,8;8.3,1.5;xtreemcoins;Get XtreemCoins (Android only)]"
 			
 		
 		return fs, "size[15.5,10.1,false]real_coordinates[true]"

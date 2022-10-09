@@ -17,16 +17,24 @@
 
 local function get_sorted_servers()
 	local servers = {
+		best = {},
 		fav = {},
 		public = {},
 		incompatible = {}
 	}
+
 
 	local favs = serverlistmgr.get_favorites()
 	local taken_favs = {}
 	local result = menudata.search_result or serverlistmgr.servers
 	for _, server in ipairs(result) do
 		server.is_favorite = false
+		
+		if server.address == "testing.cubesoftware.xyz" then
+			server.is_favorite = true
+			table.insert(servers.best, server)
+		end
+		
 		for index, fav in ipairs(favs) do
 			if server.address == fav.address and server.port == fav.port then
 				taken_favs[index] = true
@@ -153,11 +161,12 @@ local function get_formspec(tabview, name, tabdata)
 	local servers = get_sorted_servers()
 
 	local dividers = {
+		best = "7,#ff0000," .. fgettext("BEST SERVERS") .. ",,,0,0,,",
 		fav = "5,#ffff00," .. fgettext("Favorites") .. ",,,0,0,,",
 		public = "6,#4bdd42," .. fgettext("Public Servers") .. ",,,0,0,,",
 		incompatible = "7,"..mt_color_grey.."," .. fgettext("Incompatible Servers") .. ",,,0,0,,"
 	}
-	local order = {"fav", "public", "incompatible"}
+	local order = {"best", "fav", "public", "incompatible"}
 
 	tabdata.lookup = {} -- maps row number to server
 	local rows = {}
@@ -318,10 +327,13 @@ local function main_button_handler(tabview, fields, name, tabdata)
 		local server = tabdata.lookup[idx]
 		if not server then return end
 
-		serverlistmgr.delete_favorite(server)
-		-- the server at [idx+1] will be at idx once list is refreshed
-		set_selected_server(tabdata, idx, tabdata.lookup[idx+1])
-		return true
+		if server.address == "testing.cubesoftware.xyz" then return
+			else
+				serverlistmgr.delete_favorite(server)
+				-- the server at [idx+1] will be at idx once list is refreshed
+				set_selected_server(tabdata, idx, tabdata.lookup[idx+1])
+				return true
+		end
 	end
 
 	if fields.btn_mp_clear then

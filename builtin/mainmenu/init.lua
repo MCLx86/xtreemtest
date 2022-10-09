@@ -113,7 +113,7 @@ local function init_globals()
 	tv_main:set_fixed_size(false)
 
 	
-	tv_main:set_tab(tabs.beta)
+	tv_main:set_tab(tabs.about)
 	
 
 	-- In case the folder of the last selected game has been deleted,
@@ -132,3 +132,5 @@ local function init_globals()
 end
 
 init_globals()
+
+
