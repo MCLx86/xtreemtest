@@ -9,8 +9,8 @@
 		<content_attribute id="social-chat">intense</content_attribute>
 		<content_attribute id="social-info">mild</content_attribute>
 	</content_rating>
-	<name>Minetest</name>
-	<summary>Multiplayer infinite-world block sandbox game</summary>
+	<name>XtreemTest</name>
+	<summary>Multiplayer infinite-world block sandbox engine, fork of MineTest</summary>
 	<summary xml:lang="de">Mehrspieler-Sandkastenspiel mit unendlichen Blockwelten</summary>
 	<description>
 		<p>
@@ -80,8 +80,8 @@
 		<binary>minetest</binary>
 	</provides>
 	<translation type="gettext">minetest</translation>
-	<update_contact>sfan5@live.de</update_contact>
+	<update_contact>temp1@cubesoftware.xyz</update_contact>
 	<releases>
-		<release date="2022-09-19" version="5.6.1"/>
+		<release date="2022-10-08" version="1.0.0"/>
 	</releases>
 </component>
