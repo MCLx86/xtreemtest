@@ -2,38 +2,37 @@
 ========
 
 
-### "It's just not a game anymore!"
+### "It's like MineTest, but more XTREEM!"
 
 Fork of Minetest, a free-as-in-freedom voxel game engine with easy modding and game creation.
 
 Copyright (C) 2010-2022 Perttu Ahola <celeron55@gmail.com>  
-
 Copyright (C) 2021-2022 Migdyn <xtreemsex@testing.cubesoftware.xyz>  
-
 and contributors (see source file comments and the version control log of the original Minetest repository, which can be found [here](https://github.com/minetest/minetest).
 
 
 ## IMPORTANT NOTE: This readme file and other documentation might be outdated or irrelevant, as it was taken directly from the original Minetest code.
 
 
-In case you downloaded the source code
---------------------------------------
-If you downloaded the Minetest Engine source code in which this file is
-contained, you probably want to download the [Minetest Game](https://github.com/minetest/minetest_game/)
-project too. See its README.txt for more information.
-
 Table of Contents
 ------------------
 
-1. [Further Documentation](#further-documentation)
-2. [Default Controls](#default-controls)
-3. [Paths](#paths)
-4. [Configuration File](#configuration-file)
-5. [Command-line Options](#command-line-options)
-6. [Compiling](#compiling)
-7. [Docker](#docker)
-8. [Version Scheme](#version-scheme)
+1. [Our goal](#our-goal)
+2. [Further Documentation](#further-documentation)
+3. [Default Controls](#default-controls)
+4. [Paths](#paths)
+5. [Configuration File](#configuration-file)
+6. [Command-line Options](#command-line-options)
+7. [Compiling](#compiling)
+8. [Docker](#docker)
+9. [Version Scheme](#version-scheme)
 
+
+Our goal
+---------
+Our goal is to create a positive and censorship-free community around MineTest, 
+improve upon the MineTest engine by adding new features to it, as well as provide
+a base for future Google Play games.
 
 Further documentation
 ----------------------
