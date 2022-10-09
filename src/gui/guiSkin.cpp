@@ -27,30 +27,34 @@ GUISkin::GUISkin(EGUI_SKIN_TYPE type, video::IVideoDriver* driver)
 
 	if ((Type == EGST_WINDOWS_CLASSIC) || (Type == EGST_WINDOWS_METALLIC))
 	{
-		Colors[EGDC_3D_DARK_SHADOW]     = video::SColor(101,50,50,50);
-		Colors[EGDC_3D_SHADOW]          = video::SColor(101,130,130,130);
-		Colors[EGDC_3D_FACE]            = video::SColor(220,100,100,100);
+		Colors[0] = video::SColor(101, 250, 250, 200);
+		Colors[1] = video::SColor(101, 250, 250, 200);
+		Colors[2] = video::SColor(101, 250, 250, 200);
+		Colors[3] = video::SColor(101, 250, 250, 200);
+		Colors[EGDC_3D_DARK_SHADOW]     = video::SColor(101,50,50,200);
+		Colors[EGDC_3D_SHADOW]          = video::SColor(101,130,130,230);
+		Colors[EGDC_3D_FACE]            = video::SColor(220,0,0,60);
 		Colors[EGDC_3D_HIGH_LIGHT]      = video::SColor(101,255,255,255);
-		Colors[EGDC_3D_LIGHT]           = video::SColor(101,210,210,210);
+		Colors[EGDC_3D_LIGHT]           = video::SColor(101,110,110,255);
 		Colors[EGDC_ACTIVE_BORDER]      = video::SColor(101,16,14,115);
 		Colors[EGDC_ACTIVE_CAPTION]     = video::SColor(255,255,255,255);
-		Colors[EGDC_APP_WORKSPACE]      = video::SColor(101,100,100,100);
+		Colors[EGDC_APP_WORKSPACE]      = video::SColor(101,80,80,255);
 		Colors[EGDC_BUTTON_TEXT]        = video::SColor(240,10,10,10);
 		Colors[EGDC_GRAY_TEXT]          = video::SColor(240,130,130,130);
-		Colors[EGDC_HIGH_LIGHT]         = video::SColor(101,8,36,107);
+		Colors[EGDC_HIGH_LIGHT]         = video::SColor(101,8,36,207);
 		Colors[EGDC_HIGH_LIGHT_TEXT]    = video::SColor(240,255,255,255);
 		Colors[EGDC_INACTIVE_BORDER]    = video::SColor(101,165,165,165);
 		Colors[EGDC_INACTIVE_CAPTION]   = video::SColor(255,30,30,30);
 		Colors[EGDC_TOOLTIP]            = video::SColor(200,0,0,0);
 		Colors[EGDC_TOOLTIP_BACKGROUND] = video::SColor(200,255,255,225);
-		Colors[EGDC_SCROLLBAR]          = video::SColor(101,230,230,230);
-		Colors[EGDC_WINDOW]             = video::SColor(101,255,255,255);
+		Colors[EGDC_SCROLLBAR]          = video::SColor(101,90,130,255);
+		Colors[EGDC_WINDOW]             = video::SColor(101,25,5,255);
 		Colors[EGDC_WINDOW_SYMBOL]      = video::SColor(200,10,10,10);
 		Colors[EGDC_ICON]               = video::SColor(200,255,255,255);
 		Colors[EGDC_ICON_HIGH_LIGHT]    = video::SColor(200,8,36,107);
 		Colors[EGDC_GRAY_WINDOW_SYMBOL] = video::SColor(240,100,100,100);
 		Colors[EGDC_EDITABLE] 			= video::SColor(255,255,255,255);
-		Colors[EGDC_GRAY_EDITABLE]		= video::SColor(255,120,120,120);
+		Colors[EGDC_GRAY_EDITABLE]		= video::SColor(255,250,250,250);
 		Colors[EGDC_FOCUSED_EDITABLE]	= video::SColor(255,240,240,255);
 
 
@@ -72,13 +76,13 @@ GUISkin::GUISkin(EGUI_SKIN_TYPE type, video::IVideoDriver* driver)
 	else
 	{
 		//0x80a6a8af
-		Colors[EGDC_3D_DARK_SHADOW] 	=	0x60767982;
+		Colors[EGDC_3D_DARK_SHADOW] 	=	0x607679f2;
 		//Colors[EGDC_3D_FACE]			=	0xc0c9ccd4;		// tab background
-		Colors[EGDC_3D_FACE]			=	0xc0cbd2d9;		// tab background
+		Colors[EGDC_3D_FACE]			=	0xc0cbd2f9;		// tab background
 		Colors[EGDC_3D_SHADOW]			=	0x50e4e8f1;		// tab background, and left-top highlight
 		Colors[EGDC_3D_HIGH_LIGHT]		=	0x40c7ccdc;
 		Colors[EGDC_3D_LIGHT]			=	0x802e313a;
-		Colors[EGDC_ACTIVE_BORDER]		=	0x80404040;		// window title
+		Colors[EGDC_ACTIVE_BORDER]		=	0x80808080;		// window title
 		Colors[EGDC_ACTIVE_CAPTION] 	=	0xffd0d0d0;
 		Colors[EGDC_APP_WORKSPACE]		=	0xc0646464;		// unused
 		Colors[EGDC_BUTTON_TEXT]		=	0xd0161616;

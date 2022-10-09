@@ -208,7 +208,7 @@ bool ClientLauncher::run(GameStartData &start_data, const Settings &cmd_args)
 	while (m_rendering_engine->run() && !*kill &&
 		!g_gamecallback->shutdown_requested) {
 		// Set the window caption
-		const wchar_t *text = wgettext("Main Menu");
+		const wchar_t *text = wgettext("Title Menu");
 		m_rendering_engine->get_raw_device()->
 			setWindowCaption((utf8_to_wide(PROJECT_NAME_C) +
 			L" " + utf8_to_wide(g_version_hash) +
@@ -224,11 +224,9 @@ bool ClientLauncher::run(GameStartData &start_data, const Settings &cmd_args)
 				custom gui elements directly on the screen.
 				Otherwise they won't be automatically drawn.
 			*/
-			guiroot = m_rendering_engine->get_gui_env()->addStaticText(L"",
-				core::rect<s32>(0, 0, 10000, 10000));
+			guiroot = m_rendering_engine->get_gui_env()->addStaticText(L"", core::rect<s32>(0, 0, 10000, 10000));
 
-			bool game_has_run = launch_game(error_message, reconnect_requested,
-				start_data, cmd_args);
+			bool game_has_run = launch_game(error_message, reconnect_requested, start_data, cmd_args);
 
 			// Reset the reconnect_requested flag
 			reconnect_requested = false;

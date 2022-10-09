@@ -1020,6 +1020,9 @@ void GUIFormSpecMenu::parseButton(parserData* data, const std::string &element,
 
 	GUIButton *e = GUIButton::addButton(Environment, rect, m_tsrc,
 			data->current_parent, spec.fid, spec.flabel.c_str());
+			
+			//just a test -- migdyn
+	e->setColor(video::SColor(255, 5, 255, 255));
 
 	auto style = getStyleForElement(type, name, (type != "button") ? "button" : "");
 

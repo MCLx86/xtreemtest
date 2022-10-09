@@ -126,9 +126,9 @@ local function init_globals()
 	end]]
 
 	--ui.set_default("maintab")
-	check_new_version()
+	--check_new_version()
 	--tv_main:show()
-	ui.update()
+	--ui.update()
 end
 
 init_globals()

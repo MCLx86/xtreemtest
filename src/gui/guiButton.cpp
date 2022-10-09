@@ -20,7 +20,7 @@ using namespace irr;
 using namespace gui;
 
 // Multiply with a color to get the default corresponding hovered color
-#define COLOR_HOVERED_MOD 1.25f
+#define COLOR_HOVERED_MOD 2.f
 
 // Multiply with a color to get the default corresponding pressed color
 #define COLOR_PRESSED_MOD 0.85f
@@ -46,6 +46,7 @@ GUIButton::GUIButton(IGUIEnvironment* environment, IGUIElement* parent,
 	// PATCH
 	for (size_t i = 0; i < 4; i++) {
 		Colors[i] = Environment->getSkin()->getColor((EGUI_DEFAULT_COLOR)i);
+		//Colors[i] = video::SColor(255, 0, 255, 255);
 	}
 	StaticText = gui::StaticText::add(Environment, Text.c_str(), core::rect<s32>(0,0,rectangle.getWidth(),rectangle.getHeight()), false, false, this, id);
 	StaticText->setTextAlignment(EGUIA_CENTER, EGUIA_CENTER);
@@ -646,10 +647,9 @@ GUIButton* GUIButton::addButton(IGUIEnvironment *environment,
 void GUIButton::setColor(video::SColor color)
 {
 	BgColor = color;
-
 	float d = 0.65f;
 	for (size_t i = 0; i < 4; i++) {
-		video::SColor base = Environment->getSkin()->getColor((gui::EGUI_DEFAULT_COLOR)i);
+		video::SColor base = video::SColor(255, 0, 255, 255); //Environment->getSkin()->getColor((gui::EGUI_DEFAULT_COLOR)i);
 		Colors[i] = base.getInterpolated(color, d);
 	}
 }
@@ -696,8 +696,7 @@ void GUIButton::setFromStyle(const StyleSpec& style)
 	} else {
 		BgColor = video::SColor(255, 255, 255, 255);
 		for (size_t i = 0; i < 4; i++) {
-			video::SColor base =
-					Environment->getSkin()->getColor((gui::EGUI_DEFAULT_COLOR)i);
+			video::SColor base = Environment->getSkin()->getColor((gui::EGUI_DEFAULT_COLOR)i); //video::SColor(255, 15 * i, 15 * i, 40 * i);
 			if (pressed) {
 				Colors[i] = multiplyColorValue(base, COLOR_PRESSED_MOD);
 			} else if (hovered) {

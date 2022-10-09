@@ -417,7 +417,7 @@ void GUIEngine::drawBackground(video::IVideoDriver *driver)
 
 	/* If no texture, draw background of solid color */
 	if(!texture){
-		video::SColor color(255,80,58,37);
+		video::SColor color(255,50,58,87);
 		core::rect<s32> rect(0, 0, screensize.X, screensize.Y);
 		driver->draw2DRectangle(color, rect, NULL);
 		return;

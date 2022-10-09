@@ -106,8 +106,7 @@ void GUIBox::draw()
 
 	video::IVideoDriver *driver = Environment->getVideoDriver();
 
-	driver->draw2DRectangle(main_rect, m_colors[0], m_colors[1], m_colors[3],
-		m_colors[2], &AbsoluteClippingRect);
+	driver->draw2DRectangle(main_rect, m_colors[0], m_colors[1], m_colors[3], m_colors[2], &AbsoluteClippingRect);
 
 	for (size_t i = 0; i <= 3; i++)
 		driver->draw2DRectangle(m_bordercolors[i], border_rects[i],
