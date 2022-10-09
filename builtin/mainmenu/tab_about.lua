@@ -18,7 +18,8 @@
 -- https://github.com/orgs/minetest/teams/engine/members
 
 local core_developers = {
-	"Perttu Ahola (celeron55) <celeron55@gmail.com> [Project founder]",
+	"Perttu Ahola (celeron55) <celeron55@gmail.com> [MineTest founder]",
+	"Migdyn (a.k.a. Mike) <xtreemsex@testing.cubesoftware.xyz> [XtreemTest founder]",
 	"sfan5 <sfan5@live.de>",
 	"ShadowNinja <shadowninja@minetest.net>",
 	"Nathanaëlle Courant (Nore/Ekdohibs) <nore@mesecons.net>",
@@ -155,7 +156,7 @@ return {
 			"style[label_button;border=false]" ..
 			"button[0.1,3.4;5.3,0.5;label_button;" ..
 			core.formspec_escape(version.project .. " " .. version.string) .. "]" ..
-			"button[1.5,4.1;2.5,0.8;homepage;minetest.net]" ..
+			"button[1.5,4.1;2.5,0.8;homepage;mcl.sovnat.info]" ..
 			"scroll_container[5.5,0.1;9.5,6.9;scroll_credits;vertical;" ..
 			tostring(scroll_height / 1000) .. "]" .. credit_fs ..
 			"scroll_container_end[]"..
@@ -180,7 +181,7 @@ return {
 	end,
 	cbf_button_handler = function(this, fields, name, tabdata)
 		if fields.homepage then
-			core.open_url("https://www.minetest.net")
+			core.open_url("https://mcl.sovnat.info")
 		end
 
 		if fields.share_debug then
