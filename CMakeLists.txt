@@ -17,7 +17,7 @@ set(GCC_MINIMUM_VERSION "5.1")
 set(CLANG_MINIMUM_VERSION "3.5")
 
 # Also remember to set PROTOCOL_VERSION in network/networkprotocol.h when releasing
-set(VERSION_MAJOR 6)
+set(VERSION_MAJOR 8)
 set(VERSION_MINOR 0)
 set(VERSION_PATCH 0)
 set(VERSION_EXTRA "pre-release 1" CACHE STRING "Stuff to append to version string")
@@ -260,16 +260,16 @@ install(FILES "minetest.conf.example" DESTINATION "${EXAMPLE_CONF_DIR}")
 
 if(UNIX AND NOT APPLE)
 	install(FILES "doc/minetest.6" "doc/minetestserver.6" DESTINATION "${MANDIR}/man6")
-	install(FILES "misc/net.minetest.minetest.desktop" DESTINATION "${XDG_APPS_DIR}")
-	install(FILES "misc/net.minetest.minetest.appdata.xml" DESTINATION "${APPDATADIR}")
-	install(FILES "misc/minetest.svg" DESTINATION "${ICONDIR}/hicolor/scalable/apps")
-	install(FILES "misc/minetest-xorg-icon-128.png"
+	install(FILES "misc/info.sovnat.xtreemtest.desktop" DESTINATION "${XDG_APPS_DIR}")
+	install(FILES "misc/info.sovnat.xtreemtest.appdata.xml" DESTINATION "${APPDATADIR}")
+	install(FILES "misc/xtreemtest.svg" DESTINATION "${ICONDIR}/hicolor/scalable/apps")
+	install(FILES "misc/xtreemtest-xorg-icon-128.png"
 		DESTINATION "${ICONDIR}/hicolor/128x128/apps"
-		RENAME "minetest.png")
+		RENAME "xtreemtest.png")
 endif()
 
 if(APPLE)
-	install(FILES "misc/minetest-icon.icns" DESTINATION "${SHAREDIR}")
+	install(FILES "misc/xtreemtest-icon.icns" DESTINATION "${SHAREDIR}")
 	install(FILES "misc/Info.plist" DESTINATION "${BUNDLE_PATH}/Contents")
 endif()
 
