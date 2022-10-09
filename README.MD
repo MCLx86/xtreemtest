@@ -24,8 +24,7 @@ Table of Contents
 5. [Configuration File](#configuration-file)
 6. [Command-line Options](#command-line-options)
 7. [Compiling](#compiling)
-8. [Docker](#docker)
-9. [Version Scheme](#version-scheme)
+8. [Version Scheme](#version-scheme)
 
 
 Our goal
@@ -36,10 +35,10 @@ a base for future Google Play games.
 
 Further documentation
 ----------------------
-- Website: https://minetest.net/
+- Website: https://mcl.sovnat.info
 - Wiki: https://wiki.minetest.net/
 - Developer wiki: https://dev.minetest.net/
-- Forum: https://forum.minetest.net/
+- phpBB forums: https://bb.cubesoftware.xyz
 - GitHub: https://github.com/minetest/minetest/
 - [doc/](doc/) directory of source distribution
 
@@ -101,17 +100,17 @@ Where each location is on each platform:
     * `share` = `.`
     * `user`  = `.`
 * Windows installed:
-    * `bin`   = `C:\Program Files\Minetest\bin (Depends on the install location)`
-    * `share` = `C:\Program Files\Minetest (Depends on the install location)`
-    * `user`  = `%APPDATA%\Minetest`
+    * `bin`   = `C:\Program Files\XtreemTest\bin (Depends on the install location)`
+    * `share` = `C:\Program Files\XtreemTest (Depends on the install location)`
+    * `user`  = `%APPDATA%\XtreemTest`
 * Linux installed:
     * `bin`   = `/usr/bin`
-    * `share` = `/usr/share/minetest`
-    * `user`  = `~/.minetest`
+    * `share` = `/usr/share/xtreemtest`
+    * `user`  = `~/.xtreemtest`
 * macOS:
     * `bin`   = `Contents/MacOS`
     * `share` = `Contents/Resources`
-    * `user`  = `Contents/User OR ~/Library/Application Support/minetest`
+    * `user`  = `Contents/User OR ~/Library/Application Support/xtreemtest`
 
 Worlds can be found as separate folders in: `user/worlds/`
 
@@ -119,7 +118,7 @@ Configuration file
 ------------------
 - Default location:
     `user/minetest.conf`
-- This file is created by closing Minetest for the first time.
+- This file is created by closing XtreemTest for the first time.
 - A specific file can be specified on the command line:
     `--config <path-to-file>`
 - A run-in-place build will look for the configuration file in
@@ -163,7 +162,7 @@ For Alpine users:
 
     sudo apk add build-base cmake libpng-dev jpeg-dev libxi-dev mesa-dev sqlite-dev libogg-dev libvorbis-dev openal-soft-dev curl-dev freetype-dev zlib-dev gmp-dev jsoncpp-dev luajit-dev zstd-dev
 
-#### Download
+#### Download w/ Git
 
 You can install Git for easily keeping your copy up to date.
 If you don’t want Git, read below on how to get the source without Git.
@@ -177,30 +176,20 @@ For Fedora users:
 
 Download source (this is the URL to the latest of source repository, which might not work at all times) using Git:
 
-    git clone --depth 1 https://github.com/minetest/minetest.git
-    cd minetest
-
-Download minetest_game (otherwise only the "Development Test" game is available) using Git:
-
-    git clone --depth 1 https://github.com/minetest/minetest_game.git games/minetest_game
+    git clone --depth 1 https://github.com/MCLx86/xtreemtest.git
+    cd xtreemtest
 
 Download IrrlichtMt to `lib/irrlichtmt`, it will be used to satisfy the IrrlichtMt dependency that way:
 
     git clone --depth 1 https://github.com/minetest/irrlicht.git lib/irrlichtmt
 
+#### Download w/out Git
 Download source, without using Git:
 
-    wget https://github.com/minetest/minetest/archive/master.tar.gz
+    wget https://github.com/MCLx86/xtreemtest/archive/master.tar.gz
     tar xf master.tar.gz
-    cd minetest-master
-
-Download minetest_game, without using Git:
-
-    cd games/
-    wget https://github.com/minetest/minetest_game/archive/master.tar.gz
-    tar xf master.tar.gz
-    mv minetest_game-master minetest_game
-    cd ..
+    mv xtreemtest-master xtreemtest
+    cd xtreemtest
 
 Download IrrlichtMt, without using Git:
 
@@ -231,7 +220,7 @@ Run it:
 - If you build a bare server you don't need to compile IrrlichtMt, just the headers suffice.
   - In that case use `-DIRRLICHT_INCLUDE_DIR=/some/where/irrlichtmt/include`.
 
-- Minetest will use the IrrlichtMt package that is found first, given by the following order:
+- XtreemTest will use the IrrlichtMt package that is found first, given by the following order:
   1. Specified `IRRLICHTMT_BUILD_DIR` CMake variable
   2. `${PROJECT_SOURCE_DIR}/lib/irrlichtmt` (if existent)
   3. Installation of IrrlichtMt in the system-specific library paths
@@ -242,8 +231,8 @@ Run it:
 
 General options and their default values:
 
-    BUILD_CLIENT=TRUE          - Build Minetest client
-    BUILD_SERVER=FALSE         - Build Minetest server
+    BUILD_CLIENT=TRUE          - Build the XtreemTest client
+    BUILD_SERVER=FALSE         - Build the XtreemTest server
     BUILD_UNITTESTS=TRUE       - Build unittest sources
     BUILD_BENCHMARKS=FALSE     - Build benchmark sources
     CMAKE_BUILD_TYPE=Release   - Type of build (Release vs. Debug)
@@ -319,25 +308,17 @@ Library specific options:
     ZSTD_INCLUDE_DIR                - Directory that contains zstd.h
     ZSTD_LIBRARY                    - Path to libzstd.a/libzstd.so/ztd.lib
 
-### Compiling on Windows using MSVC
+### Building on Windows with MSYS2
 
 ### Requirements
 
-- [Visual Studio 2015 or newer](https://visualstudio.microsoft.com)
+- [MSYS2](https://visualstudio.microsoft.com)
 - [CMake](https://cmake.org/download/)
-- [vcpkg](https://github.com/Microsoft/vcpkg)
-- [Git](https://git-scm.com/downloads)
 
-### Compiling and installing the dependencies
+### Installing the dependencies
+Enter the MSYS2 MinGW-W64 CLI and use *pacman* to install the required libraries, as well as mingw32-make and gcc.
 
-It is highly recommended to use vcpkg as package manager.
-
-After you successfully built vcpkg you can easily install the required libraries:
-```powershell
-vcpkg install zlib zstd curl[winssl] openal-soft libvorbis libogg libjpeg-turbo sqlite3 freetype luajit gmp jsoncpp opengl-registry --triplet x64-windows
-```
-
-- **Don't forget about IrrlichtMt.** The easiest way is to clone it to `lib/irrlichtmt` as described in the Linux section.
+- **Don't forget about IrrlichtMt.** The easiest way is to clone it to `lib/irrlichtmt`.
 - `curl` is optional, but required to read the serverlist, `curl[winssl]` is required to use the content store.
 - `openal-soft`, `libvorbis` and `libogg` are optional, but required to use sound.
 - `luajit` is optional, it replaces the integrated Lua interpreter with a faster just-in-time interpreter.
@@ -345,35 +326,10 @@ vcpkg install zlib zstd curl[winssl] openal-soft libvorbis libogg libjpeg-turbo 
 
 There are other optional libraries, but they are not tested if they can build and link correctly.
 
-Use `--triplet` to specify the target triplet, e.g. `x64-windows` or `x86-windows`.
-
-### Compile Minetest
-
-#### a) Using the vcpkg toolchain and CMake GUI
-1. Start up the CMake GUI
-2. Select **Browse Source...** and select DIR/minetest
-3. Select **Browse Build...** and select DIR/minetest-build
-4. Select **Configure**
-5. Choose the right visual Studio version and target platform. It has to match the version of the installed dependencies
-6. Choose **Specify toolchain file for cross-compiling**
-7. Click **Next**
-8. Select the vcpkg toolchain file e.g. `D:/vcpkg/scripts/buildsystems/vcpkg.cmake`
-9. Click Finish
-10. Wait until cmake have generated the cash file
-11. If there are any errors, solve them and hit **Configure**
-12. Click **Generate**
-13. Click **Open Project**
-14. Compile Minetest inside Visual studio.
-
-#### b) Using the vcpkg toolchain and the commandline
-
-Run the following script in PowerShell:
-
-```powershell
-cmake . -G"Visual Studio 15 2017 Win64" -DCMAKE_TOOLCHAIN_FILE=D:/vcpkg/scripts/buildsystems/vcpkg.cmake -DCMAKE_BUILD_TYPE=Release -DENABLE_GETTEXT=OFF -DENABLE_CURSES=OFF
-cmake --build . --config Release
-```
-Make sure that the right compiler is selected and the path to the vcpkg toolchain is correct.
+### Build XtreemTest
+Start up the CMake GUI and select the root XtreemTest directory and press *Configure*, select MinGW Makefiles,
+once it's done configuring click *Generate* and once that's finished go into the root directory and run mingw32-make -j[NUMBER_OF_PROCESSORS]
+(replace [NUMBER_OF_PROCESSORS] with the number of processor cores you have)
 
 ### Windows Installer using WiX Toolset
 
@@ -405,14 +361,8 @@ brew install cmake freetype gettext gmp hiredis jpeg jsoncpp leveldb libogg libp
 Download source (this is the URL to the latest of source repository, which might not work at all times) using Git:
 
 ```bash
-git clone --depth 1 https://github.com/minetest/minetest.git
-cd minetest
-```
-
-Download minetest_game (otherwise only the "Development Test" game is available) using Git:
-
-```
-git clone --depth 1 https://github.com/minetest/minetest_game.git games/minetest_game
+git clone --depth 1 https://github.com/MCLx86/xtreemtest.git
+cd xtreemtest
 ```
 
 Download Minetest's fork of Irrlicht:
@@ -442,32 +392,6 @@ make install
 ```
 open ./build/macos/minetest.app
 ```
-
-Docker
-------
-We provide Minetest server Docker images using the GitLab mirror registry.
-
-Images are built on each commit and available using the following tag scheme:
-
-* `registry.gitlab.com/minetest/minetest/server:latest` (latest build)
-* `registry.gitlab.com/minetest/minetest/server:<branch/tag>` (current branch or current tag)
-* `registry.gitlab.com/minetest/minetest/server:<commit-id>` (current commit id)
-
-If you want to test it on a Docker server you can easily run:
-
-	sudo docker run registry.gitlab.com/minetest/minetest/server:<docker tag>
-
-If you want to use it in a production environment you should use volumes bound to the Docker host
-to persist data and modify the configuration:
-
-	sudo docker create -v /home/minetest/data/:/var/lib/minetest/ -v /home/minetest/conf/:/etc/minetest/ registry.gitlab.com/minetest/minetest/server:master
-
-Data will be written to `/home/minetest/data` on the host, and configuration will be read from `/home/minetest/conf/minetest.conf`.
-
-**Note:** If you don't understand the previous commands please read the official Docker documentation before use.
-
-You can also host your Minetest server inside a Kubernetes cluster. See our example implementation in [`misc/kubernetes.yml`](misc/kubernetes.yml).
-
 
 Version scheme
 --------------
