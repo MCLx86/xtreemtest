@@ -56,6 +56,7 @@ tabs.content  = dofile(menupath .. DIR_DELIM .. "tab_content.lua")
 tabs.about    = dofile(menupath .. DIR_DELIM .. "tab_about.lua")
 tabs.local_game = dofile(menupath .. DIR_DELIM .. "tab_local.lua")
 tabs.play_online = dofile(menupath .. DIR_DELIM .. "tab_online.lua")
+tabs.beta = dofile(menupath .. DIR_DELIM .. "tab_beta.lua")
 
 --------------------------------------------------------------------------------
 local function main_event_handler(tabview, event)
@@ -98,6 +99,9 @@ local function init_globals()
 	-- note: size would be 15.5,7.1 in real coordinates mode
 
 	tv_main:set_autosave_tab(true)
+	
+	tv_main:add(tabs.beta)
+	
 	tv_main:add(tabs.local_game)
 	tv_main:add(tabs.play_online)
 
@@ -108,10 +112,9 @@ local function init_globals()
 	tv_main:set_global_event_handler(main_event_handler)
 	tv_main:set_fixed_size(false)
 
-	local last_tab = core.settings:get("maintab_LAST")
-	if last_tab and tv_main.current_tab ~= last_tab then
-		tv_main:set_tab(last_tab)
-	end
+	
+	tv_main:set_tab(tabs.beta)
+	
 
 	-- In case the folder of the last selected game has been deleted,
 	-- display "Minetest" as a header

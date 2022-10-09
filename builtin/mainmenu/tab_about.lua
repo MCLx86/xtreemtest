@@ -17,9 +17,14 @@
 
 -- https://github.com/orgs/minetest/teams/engine/members
 
+local xtreemtest_developers = {
+"Migdyn (a.k.a. Mike) <xtreemsex@testing.cubesoftware.xyz> [XtreemTest founder]",
+"Looki2000",
+"Kacper Kostka <kacperks@cubesoftware.xyz>",
+}
+
 local core_developers = {
 	"Perttu Ahola (celeron55) <celeron55@gmail.com> [MineTest founder]",
-	"Migdyn (a.k.a. Mike) <xtreemsex@testing.cubesoftware.xyz> [XtreemTest founder]",
 	"sfan5 <sfan5@live.de>",
 	"ShadowNinja <shadowninja@minetest.net>",
 	"Nathanaëlle Courant (Nore/Ekdohibs) <nore@mesecons.net>",
@@ -125,27 +130,31 @@ return {
 
 		local credit_list = {}
 		table.insert_all(credit_list, {
-			core.colorize("#ff0", fgettext("Core Developers"))
+			core.colorize("#ff0", fgettext("XtreemTest Developers"))
+		})
+		prepare_credits(credit_list, xtreemtest_developers)
+		table.insert_all(credit_list, {
+			core.colorize("#ff0", fgettext("Core MineTest Developers"))
 		})
 		prepare_credits(credit_list, core_developers)
 		table.insert_all(credit_list, {
 			"",
-			core.colorize("#ff0", fgettext("Core Team"))
+			core.colorize("#ff0", fgettext("Core MineTest Team"))
 		})
 		prepare_credits(credit_list, core_team)
 		table.insert_all(credit_list, {
 			"",
-			core.colorize("#ff0", fgettext("Active Contributors"))
+			core.colorize("#ff0", fgettext("Active MineTest Contributors"))
 		})
 		prepare_credits(credit_list, active_contributors)
 		table.insert_all(credit_list, {
 			"",
-			core.colorize("#ff0", fgettext("Previous Core Developers"))
+			core.colorize("#ff0", fgettext("Previous MineTest Core Developers"))
 		})
 		prepare_credits(credit_list, previous_core_developers)
 		table.insert_all(credit_list, {
 			"",
-			core.colorize("#ff0", fgettext("Previous Contributors"))
+			core.colorize("#ff0", fgettext("Previous MineTest Contributors"))
 		})
 		prepare_credits(credit_list, previous_contributors)
 		local credit_fs, scroll_height = build_hacky_list(credit_list)

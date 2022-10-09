@@ -29,6 +29,11 @@ function mm_game_theme.init()
 	mm_game_theme.gameid = nil
 
 	mm_game_theme.music_handle = nil
+	
+	core.set_clouds(false)
+	if not have_bg then
+		mm_game_theme.set_dirt_bg()
+	end
 end
 
 --------------------------------------------------------------------------------
@@ -63,11 +68,7 @@ function mm_game_theme.reset()
 	mm_game_theme.set_generic("header")
 
 	if not have_bg then
-		if core.settings:get_bool("menu_clouds") then
-			core.set_clouds(true)
-		else
-			mm_game_theme.set_dirt_bg()
-		end
+		mm_game_theme.set_dirt_bg()
 	end
 
 	if mm_game_theme.music_handle ~= nil then
@@ -93,12 +94,7 @@ function mm_game_theme.update_game(gamedetails)
 	core.set_clouds(false)
 
 	if not have_bg then
-
-		if core.settings:get_bool("menu_clouds") then
-			core.set_clouds(true)
-		else
-			mm_game_theme.set_dirt_bg()
-		end
+		mm_game_theme.set_dirt_bg()
 	end
 
 	mm_game_theme.set_game("footer",gamedetails)
@@ -182,7 +178,7 @@ end
 --------------------------------------------------------------------------------
 function mm_game_theme.set_dirt_bg()
 	if mm_game_theme.texturepack ~= nil then
-		local path = mm_game_theme.texturepack .. DIR_DELIM .."default_dirt.png"
+		local path = defaulttexturedir .. "bg.png"
 		if core.set_background("background", path, true, 128) then
 			return true
 		end
