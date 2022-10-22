@@ -180,10 +180,10 @@ bool ClientLauncher::run(GameStartData &start_data, const Settings &cmd_args)
 		g_menucloudsmgr = m_rendering_engine->get_scene_manager()->createNewSceneManager();
 	if (!g_menuclouds)
 		g_menuclouds = new Clouds(g_menucloudsmgr, -1, rand());
-	g_menuclouds->setHeight(100.0f);
+	g_menuclouds->setHeight(30.0f);
 	g_menuclouds->update(v3f(0, 0, 0), video::SColor(255, 240, 240, 255));
 	scene::ICameraSceneNode* camera;
-	camera = g_menucloudsmgr->addCameraSceneNode(NULL, v3f(0, 0, 0), v3f(0, 60, 100));
+	camera = g_menucloudsmgr->addCameraSceneNode(NULL, v3f(0, 0, 0), v3f(0, 10, 0));
 	camera->setFarValue(10000);
 
 	/*
