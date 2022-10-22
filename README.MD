@@ -7,7 +7,7 @@
 Fork of Minetest, a free-as-in-freedom voxel game engine with easy modding and game creation.
 
 Copyright (C) 2010-2022 Perttu Ahola <celeron55@gmail.com>  
-Copyright (C) 2021-2022 Migdyn <xtreemsex@testing.cubesoftware.xyz>  
+Copyright (C) 2021-2022 Migdyn <temp1@cubesoftware.xyz>  
 and contributors (see source file comments and the version control log of the original Minetest repository, which can be found [here](https://github.com/minetest/minetest).
 
 
@@ -30,16 +30,14 @@ Table of Contents
 Our goal
 ---------
 Our goal is to create a positive and censorship-free community around MineTest, 
-improve upon the MineTest engine by adding new features to it, as well as provide
-a base for future Google Play games.
+improve upon the MineTest engine by adding new features to it, as well as integrated
+Google AdMob into the engine.
 
 Further documentation
 ----------------------
 - Website: https://mcl.sovnat.info
-- Wiki: https://wiki.minetest.net/
-- Developer wiki: https://dev.minetest.net/
 - phpBB forums: https://bb.cubesoftware.xyz
-- GitHub: https://github.com/minetest/minetest/
+- GitHub: https://github.com/MCLx86/xtreemtest/
 - [doc/](doc/) directory of source distribution
 
 Default controls
@@ -395,15 +393,4 @@ open ./build/macos/minetest.app
 
 Version scheme
 --------------
-We use `major.minor.patch` since 5.0.0-dev. Prior to that we used `0.major.minor`.
-
-- Major is incremented when the release contains breaking changes, all other
-numbers are set to 0.
-- Minor is incremented when the release contains new non-breaking features,
-patch is set to 0.
-- Patch is incremented when the release only contains bugfixes and very
-minor/trivial features considered necessary.
-
-Since 5.0.0-dev and 0.4.17-dev, the dev notation refers to the next release,
-i.e.: 5.0.0-dev is the development version leading to 5.0.0.
-Prior to that we used `previous_version-dev`.
+We use the MAJOR.MINOR.PATCH-INFO versioning scheme since version 8.0.0-test
