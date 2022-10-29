@@ -1,4 +1,4 @@
-~~Minetest~~ XtreemTest
+XtreemTest
 ========
 
 
