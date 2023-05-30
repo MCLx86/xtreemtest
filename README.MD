@@ -1,5 +1,5 @@
-~~Minetest~~ XtreemTest
-========
+XtreemTest
+==========
 
 
 ### "It's like MineTest, but more XTREEM!"
