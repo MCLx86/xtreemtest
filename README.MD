@@ -11,7 +11,6 @@ and contributors (see source file comments and the version control log of the or
 
 ## IMPORTANT NOTE: This readme file and other documentation might be outdated or irrelevant, as it was taken directly from the original Minetest code.
 
-
 Table of Contents
 ------------------
 
