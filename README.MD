@@ -8,7 +8,6 @@ Copyright (C) 2010-2022 Perttu Ahola <celeron55@gmail.com>
 Copyright (C) 2021-2022 Migdyn <temp1@cubesoftware.xyz>  
 and contributors (see source file comments and the version control log of the original Minetest repository, which can be found [here](https://github.com/minetest/minetest).
 
-
 ## IMPORTANT NOTE: This readme file and other documentation might be outdated or irrelevant, as it was taken directly from the original Minetest code.
 
 Table of Contents
@@ -22,7 +21,6 @@ Table of Contents
 6. [Command-line Options](#command-line-options)
 7. [Compiling](#compiling)
 8. [Version Scheme](#version-scheme)
-
 
 Our goal
 ---------
